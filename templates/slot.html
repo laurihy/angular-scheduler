@@ -1,0 +1,5 @@
+<div title="{{model.start | intToTime }} - {{model.stop | intToTime }}">
+    <div class="handle left" ondrag="resize" ondragstart="startResizeStart" ondragstop="stopDrag" handle></div>
+    <div class="content" ondrag="drag" ondragstart="startDrag" ondragstop="stopDrag" handle>{{model.start | intToTime }} - {{model.stop | intToTime }}</div>
+    <div class="handle right" ondrag="resize" ondragstart="startResizeStop" ondragstop="stopDrag" handle></div>
+</div>

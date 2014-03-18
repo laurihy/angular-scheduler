@@ -1,0 +1,81 @@
+multi-slider {
+    
+    position: relative;
+    display: block;
+    height: $line-height;
+    overflow: hidden;
+
+    .slot {
+        position: absolute;
+        top: 5px; 
+        bottom: 5px; 
+        border-radius: 3px;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        line-height: #{$line-height - 10};
+        color: #fff;
+    }
+
+    .ghost {
+        background: $color-green;
+        opacity: 0.6;
+        display: none;
+        cursor: pointer;
+    }
+
+    &:hover {
+        .ghost {
+            display: block;
+        }
+    }
+
+    &.slot-hover {
+        .ghost {
+            display: none;
+        }
+    }
+
+    &.dragging {
+        .ghost {
+            display: none;
+        }
+    }
+
+    slot {
+
+        -webkit-transition: background 0.1s ease-in;
+
+        cursor: all-scroll;
+        min-width: 10px !important;
+        background: #4eb8d5;
+        
+        .handle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            &.left, &.right {
+                width: 10px;
+                background: #000;
+                cursor: col-resize !important;
+                opacity: 0.1;
+                &:hover {
+                    opacity: 0.3;
+                }
+            }
+            &.left {
+                left: 0;
+            }
+            &.right {
+                right: 0;
+            }
+        }
+
+        &.active {
+            z-index: 10;
+            background: $color-green;
+            color: #fff;
+        }
+    }
+
+}

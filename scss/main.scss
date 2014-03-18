@@ -1,0 +1,32 @@
+@import "normalize.scss";
+
+$font-size: 14px;
+
+$color-black: #222;
+$color-grey: #eee;
+$color-blue: #00a;
+$color-green: #5ab57a;
+
+$line-height: 35px;
+
+
+@import "multislider.scss";
+@import "dayparting.scss";
+
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f6f6f6;
+    font-size: 12px;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 700px;
+    margin: 50px auto;
+}
