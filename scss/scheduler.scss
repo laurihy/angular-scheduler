@@ -1,0 +1,81 @@
+.scheduler {
+
+    border: 1px solid #ccc;
+    float: left;
+    width: 100%;
+
+    background: #fff;
+
+    .labels, .data-area {
+        display: block;
+        float: left;
+    }
+
+    .labels {
+        width: 15%;
+        color: #666;
+        border-right: 1px solid #ddd;
+
+        .row {
+            padding: 0 5px;
+            border-bottom: 1px solid #ddd;
+        }
+
+    }
+
+    .data-area {
+        width: 85%;
+    }
+
+    .row {
+        position: relative;
+        height: $line-height;
+        line-height: $line-height;
+
+        &:last-child, &:last-child .grid-container {
+            border-bottom: none;
+        }
+
+    }
+
+    .timestamps {
+        color: #aaa;
+        position: relative;
+
+        .grid-container div {
+            border-right: 1px solid #eee;
+
+            &:last-child {
+                border-right: none;
+            }
+        }
+    }
+
+}
+
+.grid-container {
+
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    border-bottom: 1px solid #ddd;
+
+    div {
+        position: absolute; bottom: 0; top: 0;
+        padding: 0 5px;
+    }
+
+    &.striped {
+        div:nth-child(even){
+            background: #fafafa;
+        }
+    }
+
+    &.no-labels {
+        .content {
+            display: none;
+        }
+    }
+}

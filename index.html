@@ -12,7 +12,7 @@
 
     <script>
 
-        angular.module('myapp', ['dayparting'])
+        angular.module('myapp', ['scheduler'])
           .controller('Ctrl', function($scope){
             $scope.slots = [
                 {start: 300, stop: 420, day: 1},
@@ -45,7 +45,7 @@
         {{slots}}
         </div>
 
-        <dayparting class="dayparting" slots="slots"></dayparting>
+        <scheduler class="scheduler" slots="slots"></dayparting>
 
     </div>
 

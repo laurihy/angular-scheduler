@@ -373,35 +373,35 @@ multi-slider {
       background: #5ab57a;
       color: #fff; }
 
-.dayparting {
+.scheduler {
   border: 1px solid #ccc;
   float: left;
   width: 100%;
   background: #fff; }
-  .dayparting .labels, .dayparting .data-area {
+  .scheduler .labels, .scheduler .data-area {
     display: block;
     float: left; }
-  .dayparting .labels {
+  .scheduler .labels {
     width: 15%;
     color: #666;
     border-right: 1px solid #ddd; }
-    .dayparting .labels .row {
+    .scheduler .labels .row {
       padding: 0 5px;
       border-bottom: 1px solid #ddd; }
-  .dayparting .data-area {
+  .scheduler .data-area {
     width: 85%; }
-  .dayparting .row {
+  .scheduler .row {
     position: relative;
     height: 35px;
     line-height: 35px; }
-    .dayparting .row:last-child, .dayparting .row:last-child .grid-container {
+    .scheduler .row:last-child, .scheduler .row:last-child .grid-container {
       border-bottom: none; }
-  .dayparting .timestamps {
+  .scheduler .timestamps {
     color: #aaa;
     position: relative; }
-    .dayparting .timestamps .grid-container div {
+    .scheduler .timestamps .grid-container div {
       border-right: 1px solid #eee; }
-      .dayparting .timestamps .grid-container div:last-child {
+      .scheduler .timestamps .grid-container div:last-child {
         border-right: none; }
 
 .grid-container {
