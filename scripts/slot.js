@@ -25,7 +25,7 @@ angular.module('slot', ['handle'])
 
 
             var valToPixel = function(val){
-                percent = val / (scope.max - scope.min)
+                var percent = val / (scope.max - scope.min)
                 return Math.floor(percent * container.clientWidth + 0.5)
             }
 
@@ -34,7 +34,7 @@ angular.module('slot', ['handle'])
             }
 
             var pixelToVal = function(pixel){
-                percent = pixel / container.clientWidth;
+                var percent = pixel / container.clientWidth;
                 return Math.floor(percent * (scope.max - scope.min) + 0.5)
             }
 
@@ -43,8 +43,8 @@ angular.module('slot', ['handle'])
             }
 
             var setPosition = function(){
-                offset = valToPercent(scope.model.start)
-                width = valToPercent(scope.model.stop - scope.model.start)
+                var offset = valToPercent(scope.model.start)
+                var width = valToPercent(scope.model.stop - scope.model.start)
                 element.css({
                     left: offset + '%',
                     width: width + '%'
@@ -53,7 +53,7 @@ angular.module('slot', ['handle'])
 
 
             scope.stopDrag = function(){
-                
+
                 // this prevents user from accidentally
                 // adding new slot after resizing or dragging
                 setTimeout(function(){
@@ -90,7 +90,7 @@ angular.module('slot', ['handle'])
                 if(resizeDirectionIsStart){
 
                     newStart = round(pixelToVal(valToPixel(valuesOnDragStart.start) + d))
-                    
+
                     if (newStart <= scope.model.stop && newStart>=scope.min) {
                         scope.model.start = newStart;
                         checkForFlip()
@@ -123,7 +123,7 @@ angular.module('slot', ['handle'])
 
             var checkForFlip = function(){
                 if(scope.model.start >= scope.model.stop){
-                    
+
                     tmp = valuesOnDragStart.stop
                     valuesOnDragStart.stop = valuesOnDragStart.start
                     valuesOnDragStart.start = tmp;
@@ -141,7 +141,7 @@ angular.module('slot', ['handle'])
                             scope.slots.splice(scope.slots.indexOf(el), 1);
                             scope.model.stop = el.stop;
                             scope.model.start = el.start;
-                        } 
+                        }
                         // model completely covers another slot
                         else if(scope.model.stop >= el.stop && scope.model.start <= el.start){
                             scope.slots.splice(scope.slots.indexOf(el), 1);
@@ -150,7 +150,7 @@ angular.module('slot', ['handle'])
                         else if(el.stop >= scope.model.start && el.stop <= scope.model.stop ){
                             scope.slots.splice(scope.slots.indexOf(el), 1);
                             scope.model.start = el.start;
-                        } 
+                        }
                         // another slot's start is inside current model
                         else if (el.start >= scope.model.start && el.start <= scope.model.stop){
                             scope.slots.splice(scope.slots.indexOf(el), 1);
@@ -162,7 +162,7 @@ angular.module('slot', ['handle'])
                 if(!skip_apply){
                     scope.$apply()
                 }
-                
+
             }
 
             var deleteSelf = function(){
