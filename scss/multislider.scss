@@ -1,5 +1,5 @@
 multi-slider {
-    
+
     position: relative;
     display: block;
     height: $line-height;
@@ -7,8 +7,8 @@ multi-slider {
 
     .slot {
         position: absolute;
-        top: 5px; 
-        bottom: 5px; 
+        top: 5px;
+        bottom: 5px;
         border-radius: 3px;
         text-align: center;
         white-space: nowrap;
@@ -48,8 +48,8 @@ multi-slider {
 
         cursor: all-scroll;
         min-width: 10px !important;
-        background: #4eb8d5;
-        
+        background: $color-blue;
+
         .handle {
             position: absolute;
             top: 0;

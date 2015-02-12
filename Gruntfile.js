@@ -3,6 +3,7 @@ module.exports = function(grunt) {
   grunt.task.loadNpmTasks('grunt-contrib-jshint');
   grunt.task.loadNpmTasks('grunt-contrib-uglify');
   grunt.task.loadNpmTasks('grunt-contrib-concat');
+  grunt.task.loadNpmTasks('grunt-sass');
 
   var JS_FILES = ['scripts/**/*.js'];
 
@@ -33,8 +34,15 @@ module.exports = function(grunt) {
         }
       }
     },
+    sass: {
+      dist: {
+        files: {
+          'css/main.css': 'scss/main.scss'
+        }
+      }
+    }
   });
 
-  grunt.registerTask('default', ['jshint', 'concat', 'uglify']);
+  grunt.registerTask('default', ['jshint', 'sass', 'concat', 'uglify']);
 
 };
