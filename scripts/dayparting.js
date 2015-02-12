@@ -1,18 +1,18 @@
 angular.module('dayparting', ['multislider', 'grid'])
 
 .filter('intToTime', [function(){
-    
+
     return function(input){
 
         function pad(n, width) {
             n = n + '';
             return n.length >= width ? n : new Array(width - n.length + 1).join('0') + n;
         }
-    
-        hours = Math.floor(input / 60);
-        minutes = input % 60;
-        return pad(hours, 2)+':'+pad(minutes, 2)
-    }
+
+        var hours = Math.floor(input / 60);
+        var minutes = input % 60;
+        return pad(hours, 2)+':'+pad(minutes, 2);
+    };
 }])
 
 .directive('dayparting', [function(){
@@ -21,8 +21,8 @@ angular.module('dayparting', ['multislider', 'grid'])
         restrict: 'E',
         scope: {
             slots: '=',
-        }, 
-        link: function(scope, element, attrs){
+        },
+        link: function(scope){
             scope.labels = [
                 'Monday',
                 'Tuesday',
@@ -30,7 +30,8 @@ angular.module('dayparting', ['multislider', 'grid'])
                 'Thursday',
                 'Friday',
                 'Saturday',
-                'Sunday']
+                'Sunday'
+            ];
         }
-    }
-}])
+    };
+}]);

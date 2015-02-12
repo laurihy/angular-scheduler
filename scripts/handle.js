@@ -7,27 +7,27 @@ angular.module('handle', [])
             ondragstart: '='
         },
         restrict: 'A',
-        link: function(scope, element, attr) {
+        link: function(scope, element) {
 
-            x = 0;
+            var x = 0;
 
             element.on('mousedown', function(event) {
                 // Prevent default dragging of selected content
                 event.preventDefault();
-                
+
                 x = event.pageX;
-                
+
                 $document.on('mousemove', mousemove);
                 $document.on('mouseup', mouseup);
-                
+
                 if(scope.ondragstart){
-                    scope.ondragstart()
+                    scope.ondragstart();
                 }
 
             });
-     
+
             function mousemove(event) {
-                delta = event.pageX - x;
+                var delta = event.pageX - x;
                 scope.ondrag(delta);
             }
 
@@ -36,9 +36,9 @@ angular.module('handle', [])
                 $document.unbind('mouseup', mouseup);
 
                 if(scope.ondragstop){
-                    scope.ondragstop()
+                    scope.ondragstop();
                 }
             }
         }
-    }        
-}])
+    };
+}]);
