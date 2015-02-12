@@ -7,22 +7,18 @@
     <link rel="stylesheet" href="css/main.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
-    
-    <script src="scripts/multislider.js"></script>
-    <script src="scripts/handle.js"></script>
-    <script src="scripts/slot.js"></script>
-    <script src="scripts/grid.js"></script>
-    <script src="scripts/dayparting.js"></script>
+
+    <script src="lib/angular-scheduler.min.js"></script>
 
     <script>
 
         angular.module('myapp', ['dayparting'])
           .controller('Ctrl', function($scope){
             $scope.slots = [
-                {start: 300, stop: 420, day: 1}, 
+                {start: 300, stop: 420, day: 1},
                 {start: 60, stop: 120, day: 1}
-            ]
-          })
+            ];
+          });
 
     </script>
 
@@ -37,6 +33,6 @@
         <dayparting class="dayparting" slots="slots"></dayparting>
 
     </div>
-    
+
 </body>
 </html>
