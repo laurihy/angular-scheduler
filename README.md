@@ -20,7 +20,7 @@ In short: see `index.html` for an example.
 A bit longer: Include or copy both `lib/angular-scheduler.min.js` and `css/angular-scheduler.css` into your project and add `scheduler` as a dependency to your module. Then in your template:
 
 ```
-<scheduler class="scheduler" slots="slots"></dayparting>
+<scheduler class="scheduler" slots="slots"></scheduler>
 ```
 
 `slots` is a list, where each slot represents one time slot in each day. `start` and `end` are minutes, and `day` is an integer representing day of the week (Monday: 0, Tuesday: 1, Sunday: 6). For example:
