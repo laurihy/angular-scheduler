@@ -348,27 +348,27 @@ multi-slider {
     display: none; }
   multi-slider.dragging .ghost {
     display: none; }
-  multi-slider slot {
+  multi-slider slotx {
     -webkit-transition: background 0.1s ease-in;
     cursor: all-scroll;
     min-width: 10px !important;
     background: #4eb8d5; }
-    multi-slider slot .handle {
+    multi-slider slotx .handle {
       position: absolute;
       top: 0;
       bottom: 0; }
-      multi-slider slot .handle.left, multi-slider slot .handle.right {
+      multi-slider slotx .handle.left, multi-slider slotx .handle.right {
         width: 10px;
         background: #000;
         cursor: col-resize !important;
         opacity: 0.1; }
-        multi-slider slot .handle.left:hover, multi-slider slot .handle.right:hover {
+        multi-slider slotx .handle.left:hover, multi-slider slotx .handle.right:hover {
           opacity: 0.3; }
-      multi-slider slot .handle.left {
+      multi-slider slotx .handle.left {
         left: 0; }
-      multi-slider slot .handle.right {
+      multi-slider slotx .handle.right {
         right: 0; }
-    multi-slider slot.active {
+    multi-slider slotx.active {
       z-index: 10;
       background: #5ab57a;
       color: #fff; }

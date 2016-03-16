@@ -3,6 +3,7 @@ module.exports = function(grunt) {
   grunt.task.loadNpmTasks('grunt-contrib-jshint');
   grunt.task.loadNpmTasks('grunt-contrib-uglify');
   grunt.task.loadNpmTasks('grunt-contrib-concat');
+  grunt.task.loadNpmTasks('grunt-contrib-cssmin');
   grunt.task.loadNpmTasks('grunt-sass');
 
   var JS_FILES = ['scripts/**/*.js'];
@@ -40,9 +41,20 @@ module.exports = function(grunt) {
           'css/angular-scheduler.css': 'scss/angular-scheduler.scss'
         }
       }
+    },
+    cssmin: {
+      target: {
+        files: [{
+          expand: true,
+          cwd: 'css',
+          src: ['*.css', '!*min.css'],
+          dest: 'css',
+          ext: '.min.css'
+        }]
+      }
     }
   });
 
-  grunt.registerTask('default', ['jshint', 'sass', 'concat', 'uglify']);
+  grunt.registerTask('default', ['jshint', 'sass', 'concat', 'uglify', 'cssmin']);
 
 };
