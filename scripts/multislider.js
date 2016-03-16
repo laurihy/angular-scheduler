@@ -1,4 +1,4 @@
-angular.module('multislider', ['slot'])
+angular.module('multislider', ['slotx'])
 
 .filter('byDay', [function(){
     return function(input, day){
