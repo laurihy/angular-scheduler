@@ -1,12 +1,3 @@
-var scripts = document.getElementsByTagName('script');
-var currentScriptPath = scripts[scripts.length - 1].src;
-var templatePath = '';
-if(currentScriptPath.indexOf('lib') !== -1){
-  templatePath = currentScriptPath.substring(0, currentScriptPath.lastIndexOf('/lib') + 1) + '/templates/';
-  }
- else{
-  templatePath = currentScriptPath.substring(0, currentScriptPath.lastIndexOf('/scripts') + 1) + '/templates/';
-  }
 angular.module('slot', ['handle'])
 .directive('slot', [function() {
     return {
@@ -18,7 +9,7 @@ angular.module('slot', ['handle'])
             tick: '='
         },
         restrict: 'E',
-        templateUrl: templatePath + 'slot.html',
+        templateUrl: 'templates/slot.html',
         link: function(scope, element) {
 
 
@@ -178,10 +169,15 @@ angular.module('slot', ['handle'])
                 angular.element(container).removeClass('dragging');
                 angular.element(container).removeClass('slot-hover');
                 scope.slots.splice(scope.slots.indexOf(scope.model), 1);
+                scope.$apply();
             };
 
+            element.bind('contextmenu', function (e) {
+                e.preventDefault();
+                deleteSelf();
+            });
 
-            element.bind('contextmenu', function(e){
+            element.on('dblclick', function (e) {
                 e.preventDefault();
                 deleteSelf();
             });
