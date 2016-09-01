@@ -41,6 +41,7 @@ $scope.slots = [
 
 - Separate layout CSS from purely visual stuff to make it easier to customize looks
 - Make each component more independent, so they (especially multislider) could also be used separately
+- Bower/NPM packaging
 
 
 ## License
